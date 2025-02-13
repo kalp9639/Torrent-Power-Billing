@@ -1,5 +1,6 @@
 from base import TariffCategory
 
+
 class ElectricVehicleChargingTariff(TariffCategory):
     """Handles bill calculation for LEV: LT - Electric Vehicle Charging Stations."""
 

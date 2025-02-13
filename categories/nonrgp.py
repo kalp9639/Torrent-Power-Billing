@@ -1,5 +1,6 @@
 from base import TariffCategory
 
+
 class NonResidentialTariff(TariffCategory):
     """Handles bill calculation for Non-RGP: Commercial and Industrial Purpose (Up to & Including 15 KW)."""
 

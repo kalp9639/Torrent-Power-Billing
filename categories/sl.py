@@ -1,5 +1,6 @@
 from base import TariffCategory
 
+
 class StreetLightTariff(TariffCategory):
     """Handles bill calculation for SL: Street Light category."""
 

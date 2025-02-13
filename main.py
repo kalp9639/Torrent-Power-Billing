@@ -1,5 +1,6 @@
 import importlib
 
+
 def main():
     # Available tariff categories
     categories = {
@@ -39,6 +40,7 @@ def main():
         tariff.run()
     else:
         print("Invalid choice. Exiting...")
+
 
 if __name__ == "__main__":
     main()

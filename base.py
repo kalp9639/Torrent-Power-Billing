@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class TariffCategory(ABC):
     """Abstract base class for all tariff categories."""
 

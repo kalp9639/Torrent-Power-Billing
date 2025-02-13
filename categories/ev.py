@@ -1,5 +1,6 @@
 from base import TariffCategory
 
+
 class ElectricVehicleChargingStationTariff(TariffCategory):
     """Handles bill calculation for EV: HT Electric Vehicle Charging Stations."""
 
@@ -29,9 +30,13 @@ class ElectricVehicleChargingStationTariff(TariffCategory):
 
             # Demand charge calculation
             if billing_demand <= contract_demand:
-                demand_charge = billing_demand * 25  # Rs. 25 per kW/month for demand up to contract demand
+                demand_charge = (
+                    billing_demand * 25
+                )  # Rs. 25 per kW/month for demand up to contract demand
             else:
-                demand_charge = (contract_demand * 25) + ((billing_demand - contract_demand) * 50)  # Rs. 50 per kW/month for excess demand
+                demand_charge = (contract_demand * 25) + (
+                    (billing_demand - contract_demand) * 50
+                )  # Rs. 50 per kW/month for excess demand
 
             # Total bill calculation
             total_bill = demand_charge + energy_charge

@@ -1,5 +1,6 @@
 from base import TariffCategory
 
+
 class GeneralLightingTariff(TariffCategory):
     """Handles bill calculation for General Lighting Purpose (GLP)."""
 
@@ -21,10 +22,12 @@ class GeneralLightingTariff(TariffCategory):
                 energy_charge = units_consumed * 4.80  # 480 Paisa = 4.80 Rs
 
             # Fixed charge calculation
-            phase_choice = input("Select Phase Type:\n1. Single Phase (₹30/month)\n2. Three Phase (₹70/month)\nEnter choice (1/2): ").strip()
-            if phase_choice == '1':
+            phase_choice = input(
+                "Select Phase Type:\n1. Single Phase (₹30/month)\n2. Three Phase (₹70/month)\nEnter choice (1/2): "
+            ).strip()
+            if phase_choice == "1":
                 fixed_charge = 30
-            elif phase_choice == '2':
+            elif phase_choice == "2":
                 fixed_charge = 70
             else:
                 raise ValueError("Invalid phase choice. Please enter 1 or 2.")

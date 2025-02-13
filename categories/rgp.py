@@ -1,5 +1,6 @@
 from base import TariffCategory
 
+
 class ResidentialTariff(TariffCategory):
     """Handles bill calculation for Residential General Purpose (RGP) and Below Poverty Line (BPL)."""
 
@@ -10,9 +11,11 @@ class ResidentialTariff(TariffCategory):
         """Runs the billing calculation for the RGP category."""
         try:
             # Ask user to select RGP or BPL
-            user_type = input("Choose Residential Type: \n1. RGP (General)\n2. BPL (Below Poverty Line)\nEnter choice (1/2): ").strip()
+            user_type = input(
+                "Choose Residential Type: \n1. RGP (General)\n2. BPL (Below Poverty Line)\nEnter choice (1/2): "
+            ).strip()
 
-            if user_type not in ['1', '2']:
+            if user_type not in ["1", "2"]:
                 raise ValueError("Invalid choice. Please enter 1 or 2.")
 
             # Ask for the number of units consumed
@@ -21,7 +24,7 @@ class ResidentialTariff(TariffCategory):
                 raise ValueError("Units consumed cannot be negative.")
 
             # Energy charge calculation
-            if user_type == '1':  # RGP General
+            if user_type == "1":  # RGP General
                 if units_consumed <= 50:
                     energy_charge = units_consumed * 3.2  # 320 Paisa = 3.2 Rs
                 elif units_consumed <= 200:
@@ -37,11 +40,13 @@ class ResidentialTariff(TariffCategory):
                     energy_charge = units_consumed * 5.0
 
             # Fixed charge calculation
-            if user_type == '1':  # RGP General
-                phase_choice = input("Select Phase Type:\n1. Single Phase (₹25/month)\n2. Three Phase (₹65/month)\nEnter choice (1/2): ").strip()
-                if phase_choice == '1':
+            if user_type == "1":  # RGP General
+                phase_choice = input(
+                    "Select Phase Type:\n1. Single Phase (₹25/month)\n2. Three Phase (₹65/month)\nEnter choice (1/2): "
+                ).strip()
+                if phase_choice == "1":
                     fixed_charge = 25
-                elif phase_choice == '2':
+                elif phase_choice == "2":
                     fixed_charge = 65
                 else:
                     raise ValueError("Invalid phase choice. Please enter 1 or 2.")

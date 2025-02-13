@@ -1,5 +1,6 @@
 from base import TariffCategory
 
+
 class TemporarySupplyHighTensionTariff(TariffCategory):
     """Handles bill calculation for HTMD-3: Temporary Supply (100 kW & Above)."""
 
@@ -31,7 +32,9 @@ class TemporarySupplyHighTensionTariff(TariffCategory):
             if billing_demand <= contract_demand:
                 fixed_charge = billing_demand * 25  # Rs. 25 per kW/day
             else:
-                fixed_charge = (contract_demand * 25) + ((billing_demand - contract_demand) * 30)  # Rs. 30 per kW/day for excess
+                fixed_charge = (contract_demand * 25) + (
+                    (billing_demand - contract_demand) * 30
+                )  # Rs. 30 per kW/day for excess
 
             # TOU charge (flat rate)
             tou_charge = units_consumed * 0.60  # 60 Paisa/unit
@@ -40,11 +43,17 @@ class TemporarySupplyHighTensionTariff(TariffCategory):
             power_factor = float(input("Enter the power factor (%): "))
             power_factor_charge = 0
             if power_factor < 90:
-                power_factor_charge = (90 - power_factor) * 3  # 3 Paisa/unit for each 1% below 90%
+                power_factor_charge = (
+                    90 - power_factor
+                ) * 3  # 3 Paisa/unit for each 1% below 90%
             elif power_factor <= 95:
-                power_factor_charge = (95 - power_factor) * 0.15  # 0.15 Paisa/unit for each 1% improvement from 90% to 95%
+                power_factor_charge = (
+                    95 - power_factor
+                ) * 0.15  # 0.15 Paisa/unit for each 1% improvement from 90% to 95%
             else:
-                power_factor_charge = (power_factor - 95) * 0.27  # 0.27 Paisa/unit for each 1% improvement above 95%
+                power_factor_charge = (
+                    power_factor - 95
+                ) * 0.27  # 0.27 Paisa/unit for each 1% improvement above 95%
 
             # Total bill calculation
             total_bill = fixed_charge + energy_charge + tou_charge + power_factor_charge

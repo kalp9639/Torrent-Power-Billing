@@ -1,5 +1,6 @@
 from base import TariffCategory
 
+
 class AgriculturalTariff(TariffCategory):
     """Handles bill calculation for LTP (AG): Agricultural Purpose."""
 

@@ -1,5 +1,6 @@
 from base import TariffCategory
 
+
 class HighTensionLoadTariff(TariffCategory):
     """Handles bill calculation for HTMD-1: High Tension Load (100 kW & Above)."""
 
@@ -27,7 +28,9 @@ class HighTensionLoadTariff(TariffCategory):
             if units_consumed <= 400 * max_demand:
                 energy_charge = units_consumed * 4.55  # 455 Paisa = 4.55 Rs per unit
             else:
-                energy_charge = 400 * max_demand * 4.55 + (units_consumed - 400 * max_demand) * 4.45  # 445 Paisa = 4.45 Rs per unit
+                energy_charge = (
+                    400 * max_demand * 4.55 + (units_consumed - 400 * max_demand) * 4.45
+                )  # 445 Paisa = 4.45 Rs per unit
 
             # Fixed charge calculation
             if max_demand <= 1000:
@@ -49,21 +52,40 @@ class HighTensionLoadTariff(TariffCategory):
                 tou_charge = units_consumed * 1.00  # 100 Paisa/unit
 
             # Night Time Charge (2200 to 0600 hrs) - Flat 30 Paisa/unit
-            night_units = int(input("Enter the number of units consumed during Night Time (2200 Hrs to 0600 Hrs): "))
+            night_units = int(
+                input(
+                    "Enter the number of units consumed during Night Time (2200 Hrs to 0600 Hrs): "
+                )
+            )
             night_time_charge = night_units * 0.30  # 30 Paisa/unit
 
             # Power Factor Charge
-            power_factor = float(input("Enter Power Factor Percentage (e.g., 95 for 95%): "))
+            power_factor = float(
+                input("Enter Power Factor Percentage (e.g., 95 for 95%): ")
+            )
             power_factor_charge = 0
             if power_factor < 90:
-                power_factor_charge = (90 - power_factor) * 3  # 3 Paisa/unit for each 1% below 90%
+                power_factor_charge = (
+                    90 - power_factor
+                ) * 3  # 3 Paisa/unit for each 1% below 90%
             elif power_factor <= 95:
-                power_factor_charge = (95 - power_factor) * 0.15  # 0.15 Paisa/unit for each 1% improvement from 90% to 95%
+                power_factor_charge = (
+                    95 - power_factor
+                ) * 0.15  # 0.15 Paisa/unit for each 1% improvement from 90% to 95%
             else:
-                power_factor_charge = (power_factor - 95) * 0.27  # 0.27 Paisa/unit for each 1% improvement above 95%
+                power_factor_charge = (
+                    power_factor - 95
+                ) * 0.27  # 0.27 Paisa/unit for each 1% improvement above 95%
 
             # Total bill calculation
-            total_bill = fixed_charge + energy_charge + excess_charge + tou_charge + night_time_charge + power_factor_charge
+            total_bill = (
+                fixed_charge
+                + energy_charge
+                + excess_charge
+                + tou_charge
+                + night_time_charge
+                + power_factor_charge
+            )
             print(f"Total Bill Amount: ₹{total_bill:.2f}")
 
         except ValueError as ve:

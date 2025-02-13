@@ -1,5 +1,6 @@
 from base import TariffCategory
 
+
 class TemporarySupplyTariff(TariffCategory):
     """Handles bill calculation for TMP: Temporary Supply (Below 100 kW)."""
 
@@ -18,7 +19,9 @@ class TemporarySupplyTariff(TariffCategory):
             energy_charge = units_consumed * 5.10  # 510 Paisa = 5.10 Rs
 
             # Ask for the number of days the temporary supply was used
-            days_used = int(input("Enter the number of days temporary supply was used: "))
+            days_used = int(
+                input("Enter the number of days temporary supply was used: ")
+            )
             if days_used < 0:
                 raise ValueError("Days used cannot be negative.")
 
