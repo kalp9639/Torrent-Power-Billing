@@ -1,45 +1,55 @@
 import importlib
+from categories.rgp import ResidentialTariff
+from categories.glp import GeneralLightingTariff
+from categories.nonrgp import NonResidentialTariff
+from categories.ltp_ag import AgriculturalTariff
+from categories.ltmd_1 import LTMD1Tariff
+from categories.ltmd_2 import LTMD2Tariff
+from categories.sl import StreetLightTariff
+from categories.ev import ElectricVehicleChargingStationTariff
+from categories.tmp import TemporarySupplyTariff
+from categories.htmd_1 import HighTensionLoadTariff
+from categories.htmd_2 import HighTensionAMCPumpingStationsTariff
+from categories.htmd_3 import TemporarySupplyHighTensionTariff
+from categories.lev import ElectricVehicleChargingTariff
+from categories.htmd_metro import MetroTractionTariff
 
 
 def main():
-    # Available tariff categories
+    # Available tariff categories with module and class names
     categories = {
-        "1": "rgp.ResidentialTariff",
-        "2": "glp.GeneralLightingTariff",
-        "3": "nonrgp.NonResidentialTariff",
-        "4": "ltp_ag.AgriculturalTariff",
-        "5": "ltmd_1.LTMD1Tariff",
-        "6": "ltmd_2.LTMD2Tariff",
-        "7": "sl.StreetLightTariff",
-        "8": "lev.ElectricVehicleChargingTariff",
-        "9": "tmp.TemporarySupplyTariff",
-        "10": "htmd_1.HighTensionLoadTariff",
-        "11": "htmd_2.HighTensionAMCPumpingStationsTariff",
-        "12": "htmd_3.TemporarySupplyHighTensionTariff",
-        "13": "ev.ElectricVehicleChargingStationTariff",
-        "14": "htmd_metro.MetroTractionTariff"
+        "1": ResidentialTariff(),
+        "2": GeneralLightingTariff(),
+        "3": NonResidentialTariff(),
+        "4": AgriculturalTariff(),
+        "5": LTMD1Tariff(),
+        "6": LTMD2Tariff(),
+        "7": StreetLightTariff(),
+        "8": ElectricVehicleChargingTariff(),
+        "9": TemporarySupplyTariff(),
+        "10": HighTensionLoadTariff(),
+        "11": HighTensionAMCPumpingStationsTariff(),
+        "12": TemporarySupplyHighTensionTariff(),
+        "13": ElectricVehicleChargingStationTariff(),
+        "14": MetroTractionTariff()
     }
 
     print("Choose Tariff Category:")
-    for key, value in categories.items():
-        print(f"{key}. {value.split('.')[-1]}")
 
+    try:    
+        for key, tariff_class in categories.items():
+            tariff_instance = tariff_class  # Instantiate the class
+            print(f"{key}. {tariff_instance.name}")  # Display the category name
+    except Exception as e:
+        print(f"Error loading category: {e}")
+
+    # Get user choice
     choice = input("Enter choice (1-14): ").strip()
 
-    # Check if the user input is valid
-    if choice in categories:
-        category_path = categories[choice]
-        module_name, class_name = category_path.rsplit(".", 1)
-
-        # Dynamically import the module and class
-        module = importlib.import_module(f"categories.{module_name}")
-        tariff_class = getattr(module, class_name)
-
-        # Instantiate the tariff class and run the calculation
-        tariff = tariff_class()
-        tariff.run()
+    if categories.get(choice):
+        categories.get(choice).run()
     else:
-        print("Invalid choice. Exiting...")
+        print("Invalid choice")  
 
 
 if __name__ == "__main__":

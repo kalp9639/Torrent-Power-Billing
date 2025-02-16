@@ -23,7 +23,7 @@ class ResidentialTariff(TariffCategory):
             if units_consumed < 0:
                 raise ValueError("Units consumed cannot be negative.")
 
-            # Energy charge calculation
+            # Energy charge calculation 
             if user_type == "1":  # RGP General
                 if units_consumed <= 50:
                     energy_charge = units_consumed * 3.2  # 320 Paisa = 3.2 Rs

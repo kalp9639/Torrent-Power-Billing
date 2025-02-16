@@ -1,0 +1,72 @@
+2025-02-16 13:00:03 - root - INFO - 1. Residential Purpose (RGP)
+2025-02-16 13:00:03 - root - INFO - 2. General Lighting Purpose (GLP)
+2025-02-16 13:00:03 - root - INFO - 3. Non-RGP (Commercial and Industrial)
+2025-02-16 13:00:03 - root - INFO - 4. LTP (AG) - Agricultural Purpose
+2025-02-16 13:00:03 - root - INFO - 5. LTMD 1 - Residential Purpose (Above 15 KW)
+2025-02-16 13:00:03 - root - INFO - 6. LTMD 2 - Commercial/Industrial Purpose (Above 15 KW)
+2025-02-16 13:00:03 - root - INFO - 7. SL - Street Light
+2025-02-16 13:00:03 - root - INFO - 8. EV - HT Electric Vehicle Charging Stations
+2025-02-16 13:00:03 - root - INFO - 9. TMP - Temporary Supply (Below 100 kW)
+2025-02-16 13:00:03 - root - INFO - 10. HTMD-1 - High Tension Load (100 kW & Above)
+2025-02-16 13:00:03 - root - INFO - 11. HTMD-2 - High Tension AMC Pumping Stations
+2025-02-16 13:00:03 - root - INFO - 12. HTMD-3 - Temporary Supply (100 kW & Above)
+2025-02-16 13:00:03 - root - INFO - 13. LEV - LT Electric Vehicle Charging Stations
+2025-02-16 13:00:03 - root - INFO - 14. HTMD - Metro Traction
+2025-02-16 13:00:42 - root - ERROR - Invalid choice
+2025-02-16 13:01:23 - root - INFO - 1. Residential Purpose (RGP)
+2025-02-16 13:01:23 - root - INFO - 2. General Lighting Purpose (GLP)
+2025-02-16 13:01:23 - root - INFO - 3. Non-RGP (Commercial and Industrial)
+2025-02-16 13:01:23 - root - INFO - 4. LTP (AG) - Agricultural Purpose
+2025-02-16 13:01:23 - root - INFO - 5. LTMD 1 - Residential Purpose (Above 15 KW)
+2025-02-16 13:01:23 - root - INFO - 6. LTMD 2 - Commercial/Industrial Purpose (Above 15 KW)
+2025-02-16 13:01:23 - root - INFO - 7. SL - Street Light
+2025-02-16 13:01:23 - root - INFO - 8. EV - HT Electric Vehicle Charging Stations
+2025-02-16 13:01:23 - root - INFO - 9. TMP - Temporary Supply (Below 100 kW)
+2025-02-16 13:01:23 - root - INFO - 10. HTMD-1 - High Tension Load (100 kW & Above)
+2025-02-16 13:01:23 - root - INFO - 11. HTMD-2 - High Tension AMC Pumping Stations
+2025-02-16 13:01:23 - root - INFO - 12. HTMD-3 - Temporary Supply (100 kW & Above)
+2025-02-16 13:01:23 - root - INFO - 13. LEV - LT Electric Vehicle Charging Stations
+2025-02-16 13:01:23 - root - INFO - 14. HTMD - Metro Traction
+2025-02-16 13:01:49 - root - INFO - 
+
+1. Residential Purpose (RGP)
+2025-02-16 13:01:49 - root - INFO - 
+
+2. General Lighting Purpose (GLP)
+2025-02-16 13:01:49 - root - INFO - 
+
+3. Non-RGP (Commercial and Industrial)
+2025-02-16 13:01:49 - root - INFO - 
+
+4. LTP (AG) - Agricultural Purpose
+2025-02-16 13:01:49 - root - INFO - 
+
+5. LTMD 1 - Residential Purpose (Above 15 KW)
+2025-02-16 13:01:49 - root - INFO - 
+
+6. LTMD 2 - Commercial/Industrial Purpose (Above 15 KW)
+2025-02-16 13:01:49 - root - INFO - 
+
+7. SL - Street Light
+2025-02-16 13:01:49 - root - INFO - 
+
+8. EV - HT Electric Vehicle Charging Stations
+2025-02-16 13:01:49 - root - INFO - 
+
+9. TMP - Temporary Supply (Below 100 kW)
+2025-02-16 13:01:49 - root - INFO - 
+
+10. HTMD-1 - High Tension Load (100 kW & Above)
+2025-02-16 13:01:49 - root - INFO - 
+
+11. HTMD-2 - High Tension AMC Pumping Stations
+2025-02-16 13:01:49 - root - INFO - 
+
+12. HTMD-3 - Temporary Supply (100 kW & Above)
+2025-02-16 13:01:49 - root - INFO - 
+
+13. LEV - LT Electric Vehicle Charging Stations
+2025-02-16 13:01:49 - root - INFO - 
+
+14. HTMD - Metro Traction
+2025-02-16 13:02:37 - root - ERROR - Invalid choice
